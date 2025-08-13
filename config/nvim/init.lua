@@ -15,42 +15,11 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
-
-
-require('lazy').setup({
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", -- optional, but recommended
-    },
-    lazy = false, -- neo-tree will lazily load itself
-  },
-
-
-  {
-'shaunsingh/nord.nvim',
-lazy = false,
-priority = 1000,
-config = function()
-    -- Example config in lua
-    vim.g.nord_contrast = true
-    vim.g.nord_borders = false
-    vim.g.nord_disable_background = true
-    vim.g.nord_italic = false
-    vim.g.nord_uniform_diff_background = true
-    vim.g.nord_bold = false
-
-    -- Load the colorscheme
-    require('nord').set()
-
-end
+require('lazy').setup('plugins')
 
 
 
-  }
+
+
 
  
-})

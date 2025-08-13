@@ -2,7 +2,6 @@
 let 
   # Configs externas
   zshCfg = import ./config/zsh/zsh.nix;
-  nvimCfg = import ./config/nvim/nvim.nix;
   kittyCfg = import ./config/kitty/kitty.nix;
 
   # Paquete personalizado de TeX
@@ -19,6 +18,7 @@ let
   };
 in
 {
+  imports = [./config/nvim.nix]; 
   home.username = "tompi4";
   home.homeDirectory = "/home/tompi4";
   home.stateVersion = "25.05";
@@ -32,7 +32,6 @@ in
   
   # Traer módulos externos
   programs.zsh = zshCfg;
-  programs.neovim = nvimCfg;
   programs.kitty = kittyCfg;
   
   programs.obs-studio = {
@@ -48,19 +47,12 @@ in
   # Config adicional para Neovim
   xdg.configFile = {
     # main init.lua
-    "nvim/init.lua".source = ./config/nvim/init.lua;
+    "nvim/" = {
+    source = ./config/nvim;
+    recursive = true;
 
-    # core
-    "nvim/lua/core/options.lua".source =
-      ./config/nvim/lua/core/options.lua;
-    "nvim/lua/core/keymaps.lua".source =
-      ./config/nvim/lua/core/keymaps.lua;
+    };
 
-    # plugins
-    "nvim/lua/plugins/colortheme.lua".source =
-      ./config/nvim/lua/plugins/colortheme.lua;
-    "nvim/lua/plugins/neotree.lua".source =
-      ./config/nvim/lua/plugins/neotree.lua;
-  };
+     };
 }
 

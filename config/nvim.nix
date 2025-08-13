@@ -1,5 +1,5 @@
 {
-  enable = true;
+programs.neovim = {enable = true;
   viAlias = true;
   vimAlias = true;
   withNodeJs = true;
@@ -7,5 +7,7 @@
   extraConfig = ''
     set number relativenumber
   '';
+
+};
 }
 

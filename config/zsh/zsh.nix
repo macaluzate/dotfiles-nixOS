@@ -15,6 +15,6 @@
     la = "ls -la";
     ".." = "cd ..";
     hms = "home-manager switch";
-    hmsf = "home-manager switch flake .";
+    hmsf = "home-manager switch --flake .";
   };
 }
