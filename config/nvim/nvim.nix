@@ -8,3 +8,4 @@
     set number relativenumber
   '';
 }
+
