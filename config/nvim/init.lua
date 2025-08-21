@@ -12,14 +12,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 
-local rtp = vim.opt.rtp
-rtp:prepend(lazypath)
-
+vim.opt.rtp:prepend(lazypath)
 require('lazy').setup('plugins')
 
 
 
 
 
-
- 

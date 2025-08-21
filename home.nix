@@ -28,6 +28,14 @@ in
     myTex
     pkgs.python3Packages.pygments
     pkgs.texstudio
+    pkgs.gcc
+    pkgs.ripgrep
+    pkgs.fuzzel
+    pkgs.alacritty
+    pkgs.waybar
+    pkgs.ripgrep
+    
+    
   ];
   
   # Traer módulos externos
